@@ -1,0 +1,13 @@
+<div class="heading-container">
+     <h1 style="color: white; font-weight: bold;">OUR WORK GALLERY</h1>
+</div>
+<div class="gallery-container">
+    <div class="gallery-item" *ngFor="let img of images" (click)="openImage(img)">
+        <img [src]="img" alt="Gallery Image">
+    </div>
+</div>
+
+<!-- Fullscreen Overlay -->
+<div class="overlay" *ngIf="selectedImage" (click)="closeImage()">
+    <img [src]="selectedImage" class="fullscreen-image" (click)="$event.stopPropagation()">
+</div>

@@ -1,0 +1,74 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  /* Ensures pseudo-element stays within bounds */
+
+  /* Background image */
+  background-image: url('/assets/ClientProjImages/RefraTecnics/refraTecnics.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  /* Create a blurry overlay */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.1);
+    /* Dark overlay with 40% opacity */
+    backdrop-filter: blur(1px);
+    /* Adds blur effect */
+    z-index: 0;
+  }
+
+  /* Make sure actual content stays above */
+  >* {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.contact-container {
+  margin-top: 94px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.contact-card {
+  background: #f1f1f1;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 250px;
+  transition: all 0.3s ease;
+
+  h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  button {
+    width: 100%;
+    border-radius: 12px;
+    font-weight: 600;
+    background: linear-gradient(to right, #2196f3, #B0E0E6);
+    color: black;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    font-weight: 900;
+  }
+}

@@ -1,0 +1,118 @@
+<div class="carousel">
+  <h1 class="blinking-text">🚧 Trusted Partner In Construction: Precision. Reliability. Innovation. 🚧</h1>
+
+  <!-- Slides -->
+  <div class="slides">
+    <div *ngFor="let slide of slides; let i = index" class="slide" [class.active]="i === currentIndex">
+      <img [src]="slide.image" [alt]="slide.caption" />
+      <div class="caption">{{ slide.caption }}</div>
+    </div>
+  </div>
+  <!-- Navigation buttons with arrows only -->
+  <button class="nav prev" (click)="prevSlide()">&#10094;</button>
+  <button class="nav next" (click)="nextSlide()">&#10095;</button>
+
+
+  <!-- Indicators -->
+  <div class="indicators">
+    <span *ngFor="let slide of slides; let i = index" class="dot" [class.active]="i === currentIndex"
+      (click)="goToSlide(i)">
+    </span>
+  </div>
+</div>
+
+
+<div class="info-section">
+  <div class="info-image">
+    <img src="assets/ClientProjImages/Atctires/ATCtires.png" alt="Why Ratna Infrastructure" />
+  </div>
+  <div class="info-text">
+    <h2 class="section-title">Why Ratna Infrastructure🏗️?</h2>
+    <p class="section-text">
+      We deliver top-notch construction services focusing on precision, reliability, and innovation.
+      Our experienced team ensures high-quality results, on-time completion, and sustainable practices.
+      With state-of-the-art equipment and a commitment to excellence, we make every project a success.
+    </p>
+  </div>
+</div>
+
+<div class="info-section alt">
+  <div class="info-image">
+    <img src="assets/homeImg/staffAminities.png" alt="Safety First" />
+  </div>
+  <div class="info-text">
+    <h2 class="section-title">Safety First, as we care...🚧</h2>
+    <p class="section-text">
+      Safety is at the core of everything we do. We implement rigorous safety protocols on every site,
+      provide ongoing training to staff, and regularly audit our procedures to protect both workers
+      and the environment. Your peace of mind is our priority.
+    </p>
+  </div>
+</div>
+
+<div class="info-section">
+  <div class="info-image">
+    <img src="assets/homeImg/saftyImp.png" alt="Construction Site Rules" />
+  </div>
+  <div class="info-text">
+    <h2 class="section-title">Construction Site Rules...📋</h2>
+    <p class="section-text">
+      Our projects follow strict construction site rules to maintain discipline and efficiency.
+      This includes proper waste management, structured workflow, and adherence to quality checks
+      at each stage. We believe that an organized site leads to superior outcomes.
+    </p>
+  </div>
+</div>
+
+<div class="info-section alt">
+  <div class="info-image">
+    <img src="assets/homeImg/HCCB.png" alt="Our Partners" />
+  </div>
+  <div class="info-text">
+    <h2 class="section-title">Our Partners...👥</h2>
+    <p class="section-text">
+      We collaborate with leading brands, government agencies, and private sector clients.
+      These partnerships are built on trust, integrity, and shared goals. Together, we achieve
+      milestones that reflect quality, innovation, and client satisfaction.
+    </p>
+  </div>
+</div>
+
+<div class="info-section">
+  <div class="info-image">
+    <img src="assets/ClientProjImages/HFCL/HFCL.png" alt="What We Deliver" />
+  </div>
+  <div class="info-text">
+    <h2 class="section-title">What We Deliver?🏬</h2>
+    <p class="section-text">
+      From project conception to execution, we provide sustainable and efficient infrastructure solutions.
+      Our focus on innovation, timely delivery, and high-quality standards ensures that clients receive
+      value at every stage. We don’t just build structures — we build trust and long-term relationships.
+    </p>
+  </div>
+</div>
+
+<!-- GST -->
+<h1 style="text-align: center; font-weight: 700; color: white;">OUR REACH -</h1>
+<p style="text-align: center; color: azure;">("As a PAN-India company, we invite you to download and explore state-wise GST details.")</p>
+<section class="scroll-section">
+  <div class="card-container">
+    <mat-card *ngFor="let state of states" class="state-card">
+      <mat-card-header>
+        <mat-card-title>{{ state.name }}</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-actions>
+        <!-- Open PDF in dialog -->
+        <button mat-raised-button color="primary" (click)="openPdfDialog(state.pdf1)">
+          View PDF
+        </button>
+
+        <!-- Direct Download -->
+        <!-- <button mat-raised-button color="primary" (click)="downloadPdf(state.pdf1)">
+          Download PDF
+        </button> -->
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</section>

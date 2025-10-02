@@ -1,0 +1,107 @@
+:host {
+    display: block;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    /* Ensures pseudo-element stays within bounds */
+
+    /* Background image */
+    background-image: url('/assets/ClientProjImages/HFCL/HFCL.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    /* Create a blurry overlay */
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.1);
+        /* Dark overlay with 40% opacity */
+        backdrop-filter: blur(1px);
+        /* Adds blur effect */
+        z-index: 0;
+    }
+
+    /* Make sure actual content stays above */
+    >* {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.job-apply-container {
+    padding-top: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    // background: #f5faff;
+    padding: 20px;
+
+    mat-card {
+        max-width: 500px;
+        width: 100%;
+        padding: 20px;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        background-color: #dbeff2;
+    }
+
+    mat-card-header {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+
+        mat-card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: black;
+        }
+    }
+
+    .hint-text {
+        text-align: center;
+        font-size: 1rem;
+        margin-bottom: 20px;
+        color: #555;
+    }
+
+    .resume-section {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+
+        .resume-label {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .resume-input {
+            padding: 6px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 5px;
+        }
+
+        small {
+            font-size: 0.85rem;
+            color: #777;
+        }
+    }
+
+    .send-btn {
+        width: 100%;
+        font-size: 1.1rem;
+        font-weight: bold;
+        background: linear-gradient(to right, #B0E0E6, #72d8e6);
+        color: black;
+        border-radius: 10px;
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+}

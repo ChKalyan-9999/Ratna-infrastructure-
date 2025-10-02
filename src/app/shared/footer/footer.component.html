@@ -1,0 +1,50 @@
+<footer class="footer">
+  <!-- Column 1 -->
+  <div class="footer-column">
+    <img src="assets/images/ratna_logo.jpg" alt="Company Logo" class="company-logo" />
+    <!-- Dropdown Group -->
+    <div class="dropdown">
+      <span class="dropdown-title">➤ Our Groups ▼</span>
+      <div class="dropdown-content">
+        <a routerLink="/group/promoters">Ratna Promoters & Developers</a>
+        <a routerLink="/group/international">Ratna International Pvt Ltd</a>
+        <a routerLink="/group/vermafilling">Verma Filling Station</a>
+        <a routerLink="/group/ratnafilling">Ratna Filling Station</a>
+      </div>
+    </div>
+    <div class="logo-group">
+      <img src="assets/images/IAF.png" alt="iOS Logo" class="small-logo" />
+      <img src="assets/images/ratna_cpg_logo.png" alt="Ratna Group Logo" class="small-logo" (click)="openPdf()" />
+    </div>
+  </div>
+
+  <!-- Dialog for PDF as image -->
+  <ng-template #pdfDialog>
+    <div class="pdf-dialog">
+      <img src="assets/homeImg/registration.png" alt="PDF Page" />
+    </div>
+  </ng-template>
+
+
+  <!-- Column 2 -->
+  <div class="footer-column links">
+    <a routerLink="/">➤ Home</a>
+    <a routerLink="/about">➤ About Us</a>
+    <a routerLink="info/info2">➤ Consultants</a>
+    <a routerLink="info/info1">➤ Clients</a>
+    <a routerLink="/work">➤ Career</a>
+    <a routerLink="/contact">➤ Contact Us</a>
+  </div>
+
+  <!-- Column 3 -->
+  <div class="footer-column location-column">
+    <p style="font-size: x-large; color: black;">📍 Our Location:</p>
+    <div class="location-details">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3828.147781011216!2d80.83865757460589!3d16.366432631414096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a360045bbd1a47f%3A0x345942b2f3c712a0!2sRatna%20Infra%20Structures!5e0!3m2!1sen!2sin!4v1758258279166!5m2!1sen!2sin"
+        width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p style="color: black;">Ratna Infra Structures, Vuyyuru, Andhra Pradesh 521165, India</p>
+    </div>
+  </div>
+</footer>

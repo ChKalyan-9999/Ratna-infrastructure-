@@ -1,0 +1,198 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  /* Ensures pseudo-element stays within bounds */
+
+  /* Background image */
+  background-image: url('/assets/ClientProjImages/RefraTecnics/refraTecnics.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  /* Create a blurry overlay */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    /* Dark overlay with 40% opacity */
+    backdrop-filter: blur(4px);
+    /* Adds blur effect */
+    z-index: 0;
+  }
+
+  /* Make sure actual content stays above */
+  >* {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  // font-family: "Segoe UI", Roboto, sans-serif;
+  color: #1a1a1a;
+  padding-top: 74px;
+
+  .hero {
+    text-align: center;
+
+    h1 {
+      // font-family: "Bungee", sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #B0E0E6;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+
+      /* Black outline for each letter */
+      // -webkit-text-stroke: 0.2px black;
+      // text-stroke: 0.2px black;
+      /* for browsers supporting it */
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin: 2rem 0 1rem;
+      color: whitesmoke;
+      border-bottom: 2px solid #B0E0E6;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      // -webkit-text-stroke: 0.2px black;
+      // text-stroke: 0.2px black;
+    }
+
+    h3 {
+      // font-family: "Bungee", sans-serif;
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #B0E0E6;
+      font-weight: 600;
+      // text-decoration: underline;
+      /* Black outline for each letter */
+      // -webkit-text-stroke: 0.2px black;
+      // text-stroke: 0.2px black;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: justify;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+  }
+
+  // Section Styling (Why Us / Managing Partner / Partners)
+  .section {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    &.highlight {
+      background: #e8f3ff;
+    }
+  }
+
+  // Profile Cards
+  .profile-card {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1.5rem;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+      width: 100%;
+    }
+
+    .left-side {
+      flex: 0 0 200px;
+      text-align: center;
+
+      .name {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: black;
+        margin-bottom: 0.5rem;
+      }
+
+      .profile-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid #B0E0E6;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      .profile-image-manage {
+        width: 150px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid #B0E0E6;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        position: relative;
+        top: 15px;
+        /* pushes image down */
+      }
+    }
+
+    .right-side {
+      flex: 1;
+
+      p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #444;
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .profile-card {
+    flex-direction: column;
+    text-align: center;
+
+    .left-side {
+      flex: unset;
+      margin-bottom: 1rem;
+    }
+
+    .right-side {
+      p {
+        text-align: center;
+      }
+    }
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+}

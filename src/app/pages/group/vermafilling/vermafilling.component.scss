@@ -1,0 +1,88 @@
+.main-container {
+    margin-top: 64px;
+    text-align: center;
+    font-weight: 600;
+    ;
+
+    .adress_box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        background-color: aliceblue;
+    }
+
+    .video-box {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: #1fb57a;
+
+        video {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .profile-card {
+        display: flex;
+        align-items: center;
+        margin: 2rem 0;
+        padding: 1rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        background: #B0E0E6;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Circle image */
+        .profile-image {
+            width: 150px;
+            height: 240px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+            margin: 0 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Info box */
+        .info-box {
+            flex: 1;
+            padding: 1.2rem;
+            border-radius: 12px;
+            background: #f5f7fa;
+            box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05);
+
+            h3 {
+                margin-top: 0;
+                margin-bottom: 0.8rem;
+                font-size: 1.4rem;
+                font-weight: 600;
+                color: #222;
+            }
+
+            p {
+                margin: 0;
+                font-size: 1rem;
+                line-height: 1.5;
+                color: #555;
+            }
+        }
+    }
+
+    /* Alternate layout (image right, info left) */
+    .profile-card.reverse {
+        flex-direction: row-reverse;
+
+        .info-box {
+            text-align: right;
+        }
+    }
+
+
+
+}

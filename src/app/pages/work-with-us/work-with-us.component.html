@@ -1,0 +1,24 @@
+<div class="job-apply-container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>💼 Apply with us</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+            <p class="hint-text">
+                Please click the button below to send us your application.
+                Write a minimum of 500 words on why we should hire you.
+            </p>
+
+            <div class="resume-section">
+                <label for="resume" class="resume-label">📎 Attach your resume(As mail attachment)</label>
+                <!-- <input type="file" id="resume" class="resume-input" /> -->
+                <small>You will need to attach this manually in mail before sending.</small>
+            </div>
+
+            <button mat-raised-button color="primary" (click)="sendMail()" class="send-btn">
+                📧 Mail Us Your Application
+            </button>
+        </mat-card-content>
+    </mat-card>
+</div>

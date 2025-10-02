@@ -1,0 +1,8 @@
+<div class="contact-container">
+    <div class="contact-card" *ngFor="let location of locations">
+        <h3>{{ location.name }}</h3>
+        <button mat-raised-button color="primary" (click)="openContactDetails(location)">
+            View Details
+        </button>
+    </div>
+</div>

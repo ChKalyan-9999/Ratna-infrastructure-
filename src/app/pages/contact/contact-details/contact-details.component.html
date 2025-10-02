@@ -1,0 +1,58 @@
+<h2 mat-dialog-title style="background-color: #1fb57a;">{{ data.name }}</h2>
+
+<mat-dialog-content class="contact-details-content">
+    <div class="contact-box">
+        <span><img src="assets/images/contact_ratnalogo.png" alt="Ratna Group Logo" class="logo" /></span>
+        <span><img src="assets/images/ratna_cpg_logo.png" alt="Ratna Group Logo" class="logo" /></span>
+    </div>
+    <!-- Company Name -->
+    <div *ngIf="data.data.company" class="company-section">
+        <p style="text-align: center;"><strong></strong> {{ data.data.company }}</p>
+    </div>
+
+    <!-- Partner Boxes (Name + Phone + Email in one box) -->
+    <div class="partners-section" *ngIf="data.data.partners?.length">
+        <div class="partner-card" *ngFor="let partner of data.data.partners">
+            <p class="partner-name">{{ partner.name }}</p>
+
+            <div class="contact-info">
+                <p class="partner-phone">📞 {{ partner.phone }}</p>
+                <p class="partner-email" *ngIf="partner.email">✉️ {{ partner.email }}</p>
+            </div>
+
+            <div class="actions">
+                <a [href]="getCallLink(partner.phone)" class="icon-btn call" matTooltip="Call"
+                    matTooltipPosition="above">
+                    📞
+                </a>
+
+                <a [href]="getWhatsAppLink(partner.phone)" target="_blank" class="icon-btn whatsapp"
+                    matTooltip="WhatsApp" matTooltipPosition="above">
+                    💬
+                </a>
+
+                <a *ngIf="partner.email" [href]="'mailto:' + partner.email" class="icon-btn email" matTooltip="Mail"
+                    matTooltipPosition="above">
+                    ✉️
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Address Section -->
+    <div class="address-section" *ngIf="data.data.address">
+        <p><strong>Address:</strong></p>
+        <p>{{ data.data.address }}</p>
+    </div>
+
+    <!-- Coming Soon Message -->
+    <div *ngIf="data.data.message">
+        <p>{{ data.data.message }}</p>
+    </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-stroked-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

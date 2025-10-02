@@ -1,0 +1,33 @@
+<div class="main-container">
+
+    <!-- Video Section -->
+    <div class="video-box">
+        <video #stationVideo autoplay loop muted playsinline>
+            <source src="assets/videos/vermaFill.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="adress_box">
+        <p>(locate us: 536/4A, Bypass Road, opp ratna filling station vuyyuru, Krishna, Andhra Pradesh,
+            521165)</p>
+    </div>
+
+    <h3 style="font-weight: bolder; font-size: 2rem;"><u>Our Managing Partners -</u></h3>
+    <div *ngFor="let partner of managingpartner">
+        <mat-card class="profile-card" (mouseenter)="speakOnce('Meet our Verma filling station Managing Partner ' + partner.about)"
+            (mouseleave)="stopSpeaking()">
+            <div class="card-container">
+                <!-- Left Side -->
+                <div class="left-side">
+                    <h3 class="name" style="font-weight: 600;">{{ partner.name }}</h3>
+                    <img [src]="partner.image" alt="{{partner.name}}" class="profile-image">
+                </div>
+                <!-- Right Side -->
+                <div class="right-side">
+                    <p>{{ partner.about }}</p>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>

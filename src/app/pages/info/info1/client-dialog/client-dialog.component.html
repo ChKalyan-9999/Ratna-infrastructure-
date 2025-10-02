@@ -1,0 +1,42 @@
+<div class="dialog-header">
+    <h2>{{ data.client.name }} - {{ data.type | titlecase }}</h2>
+    <button mat-icon-button (click)="close()">✖</button>
+</div>
+
+<div class="dialog-content" [ngSwitch]="data.type">
+    <!-- Photos -->
+    <div *ngSwitchCase="'photos'">
+        <ng-container *ngIf="data.client.photos?.length; else noPhotos">
+            <div class="item" *ngFor="let photo of data.client.photos">
+                <img [src]="photo" alt="Photo" />
+            </div>
+        </ng-container>
+        <ng-template #noPhotos>
+            <p>No photos available</p>
+        </ng-template>
+    </div>
+
+    <!-- Videos -->
+    <div *ngSwitchCase="'videos'">
+        <ng-container *ngIf="data.client.videos?.length; else noVideos">
+            <div class="item" *ngFor="let video of data.client.videos">
+                <video [src]="video" controls></video>
+            </div>
+        </ng-container>
+        <ng-template #noVideos>
+            <p>No videos available</p>
+        </ng-template>
+    </div>
+
+    <!-- Certificates -->
+    <div *ngSwitchCase="'certificates'">
+        <ng-container *ngIf="data.client.certificates?.length; else noCertificates">
+            <div class="item" *ngFor="let cert of data.client.certificates">
+                <img class="cert" [src]="cert" alt="Certificate" />
+            </div>
+        </ng-container>
+        <ng-template #noCertificates>
+            <p>No certificates available</p>
+        </ng-template>
+    </div>
+</div>

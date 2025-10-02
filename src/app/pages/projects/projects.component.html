@@ -1,0 +1,20 @@
+<div class="search-container">
+    <mat-form-field appearance="outline" class="search-box">
+      <mat-label>Search Project</mat-label>
+      <input matInput [(ngModel)]="searchText" placeholder="Enter project name">
+    </mat-form-field>
+  </div>
+<div class="client-container">
+    <mat-card *ngFor="let client of clients | filter:searchText" class="client-card">
+      <mat-card-header>
+        <mat-card-title><u>{{ client.name }}</u></mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="client.image" alt="{{ client.name }}" />
+      <mat-card-actions>
+        <button mat-button class="blue-button" (click)="openDialog(client, 'photos')">Photos</button>
+        <button mat-button class="yellow-button" (click)="openDialog(client, 'videos')">Videos</button>
+        <button mat-button class="green-button" (click)="openDialog(client, 'certificates')">Certificates</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  

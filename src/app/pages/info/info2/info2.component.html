@@ -1,0 +1,10 @@
+<div> <h2 class="page-title">Our Consultants</h2></div>
+<div class="consultants-container">
+    <div class="consultant-card" *ngFor="let consultant of consultants">
+        <!-- <img [src]="consultant.image" alt="{{ consultant.name }}" class="consultant-image" /> -->
+        <div class="consultant-info">
+            <h3 class="consultant-name">{{ consultant.name }}</h3>
+            <p class="consultant-address">{{ consultant.address }}</p>
+        </div>
+    </div>
+</div>

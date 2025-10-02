@@ -1,0 +1,130 @@
+:host {
+    display: block;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    /* Ensures pseudo-element stays within bounds */
+
+    /* Background image */
+    background-image: url('/assets/ClientProjImages/RefraTecnics/refraTecnics.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    /* Create a blurry overlay */
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.1);
+        /* Dark overlay with 40% opacity */
+        backdrop-filter: blur(1px);
+        /* Adds blur effect */
+        z-index: 0;
+    }
+
+    /* Make sure actual content stays above */
+    >* {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.page-title {
+    font-family: "Bungee", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #B0E0E6;
+    position: relative;
+    padding-top: 74px;
+    text-align: center;
+
+    /* Black outline for each letter */
+    -webkit-text-stroke: 0.2px black;
+    text-stroke: 0.2px black;
+    /* for browsers supporting it */
+
+    &::after {
+        content: "";
+        display: block;
+        width: 400px;
+        height: 4px;
+        margin: 10px auto 0;
+        background: linear-gradient(90deg, #42a5f5, #B0E0E6);
+        border-radius: 2px;
+    }
+}
+
+.consultants-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.consultant-card {
+    display: flex;
+    align-items: center;
+    background-color: #B0E0E6;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    margin: 20px 0;
+    padding: 20px 25px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    animation: dropIn 0.8s ease forwards;
+
+    &:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        // background: linear-gradient(135deg, #B0E0E6, #ffffff);
+        background-color: #c9e6e9;
+    }
+
+    .consultant-image {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 25px;
+        border: 3px solid #90caf9;
+        box-shadow: 0 4px 10px rgba(33, 150, 243, 0.2);
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: rotate(-3deg) scale(1.05);
+        }
+    }
+
+    .consultant-info {
+        text-align: left;
+
+        .consultant-name {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 0;
+            color: black;
+        }
+
+        .consultant-address {
+            font-size: 15px;
+            color: #555;
+            margin-top: 6px;
+            line-height: 1.4;
+        }
+    }
+}
+
+/* Drop-in animation on load */
+@keyframes dropIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,67 @@
+/* Custom dialog container */
+.custom-dialog-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  max-width: 700px !important;
+  max-height: 600px !important;
+}
+
+/* Header */
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #B0E0E6;
+  color: black;
+
+  h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  button {
+    color: black;
+    font-size: 1.2rem;
+  }
+}
+
+/* Scrollable content */
+.dialog-content {
+  flex: 1;
+  overflow-y: auto; /* only vertical scroll */
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+
+  .item {
+    margin-bottom: 12px;
+
+    img,
+    video {
+      width: 100%;       /* full width of dialog */
+      height: 300px;     /* fixed height */
+      object-fit: cover; /* crop to fit height */
+      border-radius: 8px;
+      display: block;
+    }
+
+    .cert{
+      // background-color: #1976d2;
+      object-fit: contain;
+      width: 650px;
+      height: 400px;
+      display: block;
+    }
+  }
+}
+
+/* No data text */
+.dialog-content p {
+  text-align: center;
+  color: #555;
+  margin-top: 20px;
+  font-style: italic;
+}
