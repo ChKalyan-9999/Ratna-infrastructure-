@@ -8,6 +8,7 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 export class VermafillingComponent implements AfterViewInit {
 
   @ViewChild('stationVideo') stationVideo!: ElementRef<HTMLVideoElement>;
+  videoUrl = "https://drive.google.com/uc?export=download&id=1GhQ02_wWnoWkS6kffgPMdpt4XZHDeByV";
 
   ngAfterViewInit() {
     if (this.stationVideo && this.stationVideo.nativeElement) {

@@ -17,15 +17,10 @@
     </div>
 
     <!-- Videos -->
-    <div *ngSwitchCase="'videos'">
-        <ng-container *ngIf="data.client.videos?.length; else noVideos">
-            <div class="item" *ngFor="let video of data.client.videos">
-                <video [src]="video" controls></video>
-            </div>
-        </ng-container>
-        <ng-template #noVideos>
-            <p>No videos available</p>
-        </ng-template>
+    <div *ngFor="let video of data.client.videos">
+        <iframe width="100%" height="300" [src]="getEmbedUrl(video.id)" frameborder="0"
+            allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>
     </div>
 
     <!-- Certificates -->

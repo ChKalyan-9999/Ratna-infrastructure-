@@ -65,7 +65,7 @@ export class Info1Component {
         '/assets/Gallery/refra5.png',
       ],
       videos: [
-        'assets/clientVid/refra/refratechnic.mp4',
+        { type: 'youtube', id: 'b8gzm5JZ3Es' },
       ],
       certificates: [
         'assets/clientCertImag/refra/refra.png',
