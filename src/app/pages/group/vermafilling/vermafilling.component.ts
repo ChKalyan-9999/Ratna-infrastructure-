@@ -59,7 +59,7 @@ Known for his hands-on approach, problem-solving mindset, and dedication, Sri Ka
       image: 'assets/ourGroup/Shravani.jpg',
       about: `MRS. SRAVANI CHINDA,
 
-holds a B.Tech in Computer Science and is the Managing Partner of Verma Filling Station. With her strong academic background and leadership skills, she plays a key role in overseeing daily operations, ensuring efficiency, and driving growth. Her dedication and management expertise have contributed to the station’s smooth functioning and reputation for reliability.`
+holds a B.Tech in Computer Science and is the Managing Partner of Varma Filling Station. With her strong academic background and leadership skills, she plays a key role in overseeing daily operations, ensuring efficiency, and driving growth. Her dedication and management expertise have contributed to the station’s smooth functioning and reputation for reliability.`
     },
   ]
 
